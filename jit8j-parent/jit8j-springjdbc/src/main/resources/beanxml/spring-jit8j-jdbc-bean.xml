@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                        http://www.springframework.org/schema/beans/spring-beans-4.0.xsd    
+                        http://www.springframework.org/schema/context    
+                        http://www.springframework.org/schema/context/spring-context-4.0.xsd    
+                        http://www.springframework.org/schema/mvc    
+                        http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
+	
+	<bean id="rowMapperFactory" class="org.layz.jit8j.spring.jdbc.factory.RowMapperFactory">
+		<property name="entityTableInfoFactory" ref="entityTableInfoFactory"/>
+	</bean>
+	
+	<bean id="sqlBuildFactory" class="org.layz.jit8j.spring.jdbc.factory.SqlBuildFactory">
+		<property name="entityTableInfoFactory" ref="entityTableInfoFactory"/>
+		<property name="store">
+			<map>
+				<entry key="findById" value-ref="findByIdSqlBuilder"/>
+				<entry key="queryByEntity" value-ref="queryByEntitySqlBuilder"/>
+				<entry key="countByEntity" value-ref="countByEntitySqlBuilder"/>
+				<entry key="persistEntity" value-ref="persistEntitySqlBuilder"/>
+				<entry key="deleteByEntity" value-ref="deletedByEntitySqlBuilder"/>
+				<entry key="deleteById" value-ref="deleteByIdSqlBuilder"/>
+				<entry key="update" value-ref="updateSqlBuilder"/>
+			</map>
+		</property>
+	</bean>
+	
+	<bean id="findByIdSqlBuilder" class="org.layz.jit8j.spring.jdbc.sqlBuilder.FindByIdSqlBuilder"/>
+	<bean id="queryByEntitySqlBuilder" class="org.layz.jit8j.spring.jdbc.sqlBuilder.QueryByEntitySqlBuilder"/>
+	<bean id="countByEntitySqlBuilder" class="org.layz.jit8j.spring.jdbc.sqlBuilder.CountByEntitySqlBuilder"/>
+	<bean id="persistEntitySqlBuilder" class="org.layz.jit8j.spring.jdbc.sqlBuilder.PersistEntitySqlBuilder"/>
+	<bean id="deletedByEntitySqlBuilder" class="org.layz.jit8j.spring.jdbc.sqlBuilder.DeletedByEntitySqlBuilder" />
+	<bean id="deleteByIdSqlBuilder" class="org.layz.jit8j.spring.jdbc.sqlBuilder.DeleteByIdSqlBuilder"/>
+	<bean id="updateSqlBuilder" class="org.layz.jit8j.spring.jdbc.sqlBuilder.UpdateSqlBuilder"/>
+	
+	<bean id="entityTableInfoFactory" class="org.layz.jit8j.spring.jdbc.factory.EntityTableInfoFactory"/>
+</beans>

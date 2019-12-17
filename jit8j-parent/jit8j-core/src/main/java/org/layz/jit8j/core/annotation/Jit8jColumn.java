@@ -5,6 +5,8 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
+import org.layz.jit8j.core.util.formater.Dataformater;
+
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface Jit8jColumn {
@@ -20,4 +22,13 @@ public @interface Jit8jColumn {
 	 * 排序
 	 */
 	int sort() default 0;
+	/**
+	 * 数据格式化类型
+	 * DataFormater
+	 */
+	String formaterType() default Dataformater.DEFAULT;
+	/**
+	 * 参数
+	 */
+	String param() default "";
 }

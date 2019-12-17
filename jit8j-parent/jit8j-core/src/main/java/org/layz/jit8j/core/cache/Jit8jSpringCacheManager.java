@@ -1,4 +1,4 @@
-package org.layz.jit8j.spring.jdbc.cache;
+package org.layz.jit8j.core.cache;
 
 import java.util.Collection;
 import java.util.Collections;
@@ -9,8 +9,8 @@ import org.springframework.cache.Cache;
 import org.springframework.cache.concurrent.ConcurrentMapCache;
 import org.springframework.cache.support.SimpleCacheManager;
 
-public class Jit8jCacheManager extends SimpleCacheManager{
-	private static final Logger LOGGER = LoggerFactory.getLogger(Jit8jCacheManager.class);
+public class Jit8jSpringCacheManager extends SimpleCacheManager{
+	private static final Logger LOGGER = LoggerFactory.getLogger(Jit8jSpringCacheManager.class);
 	@SuppressWarnings("unchecked")
 	@Override
 	protected Collection<? extends Cache> loadCaches() {

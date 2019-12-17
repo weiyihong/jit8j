@@ -11,7 +11,6 @@
                         http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
 	
 	<import resource="classpath*:beanxml/spring-jit8j-core-persist.xml"/>
-	<import resource="classpath*:beanxml/spring-jit8j-jdbc-bean.xml"/>
-	<import resource="classpath*:beanxml/spring-jit8j-jdbc-cache-spring.xml"/>
+	<import resource="classpath*:beanxml/spring-jit8j-mybatis-bean.xml"/>
 	
 </beans>

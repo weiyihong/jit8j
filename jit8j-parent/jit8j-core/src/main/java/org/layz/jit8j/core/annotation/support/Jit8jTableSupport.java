@@ -10,6 +10,10 @@ import org.layz.jit8j.core.annotation.Jit8jSupperClass;
 import org.layz.jit8j.core.annotation.Jit8jTable;
 import org.layz.jit8j.core.pojo.info.FieldColumnInfo;
 import org.layz.jit8j.core.pojo.info.TableClassInfo;
+import org.layz.jit8j.core.util.converter.DataConverter;
+import org.layz.jit8j.core.util.factory.DataConverterFactory;
+import org.layz.jit8j.core.util.factory.DataformaterFactory;
+import org.layz.jit8j.core.util.formater.Dataformater;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -69,6 +73,12 @@ public class Jit8jTableSupport {
 					columnName = fieldName;
 				}
 				
+				String formaterType = column.formaterType();
+				String formaterName = column.param();
+				Dataformater dataformater = DataformaterFactory.getDataformater(formaterType, formaterName);
+				
+				DataConverter converter = DataConverterFactory.getConverter(fieldType);
+				
 				FieldColumnInfo fieldInfo = new FieldColumnInfo();
 				fieldInfo.setColumn(column);
 				fieldInfo.setFieldName(fieldName);
@@ -76,7 +86,8 @@ public class Jit8jTableSupport {
 				fieldInfo.setMethodGet(methodGet);
 				fieldInfo.setMethodSet(methodSet);
 				fieldInfo.setColumnName(columnName);
-				
+				fieldInfo.setDataformater(dataformater);
+				fieldInfo.setDataConverter(converter);
 				fieldList.add(fieldInfo);
 			} catch (Exception e) {
 				LOGGER.error("obtain FieldColumnInfo error,fieldName: {}",field.getName(), e);

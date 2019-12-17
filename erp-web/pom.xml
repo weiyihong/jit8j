@@ -1,0 +1,31 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.layz.erp</groupId>
+	<artifactId>erp-web</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+
+	<properties>
+		<jit8j.version>0.0.1-SNAPSHOT</jit8j.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.layz.jit8j</groupId>
+			<artifactId>jit8j-springmvc</artifactId>
+			<version>${jit8j.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.layz.jit8j</groupId>
+			<artifactId>jit8j-springjdbc</artifactId>
+			<version>${jit8j.version}</version>
+		</dependency>
+		<!-- <dependency>
+			<groupId>org.layz.jit8j</groupId>
+			<artifactId>jit8j-mybatis</artifactId>
+			<version>${jit8j.version}</version>
+		</dependency> -->
+	</dependencies>
+</project>

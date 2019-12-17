@@ -3,6 +3,8 @@ package org.layz.jit8j.core.pojo.info;
 import java.io.Serializable;
 import java.lang.reflect.Method;
 
+import org.layz.jit8j.core.util.converter.DataConverter;
+
 public class FieldInfo implements Serializable{
 	/**
 	 * 
@@ -10,6 +12,7 @@ public class FieldInfo implements Serializable{
 	private static final long serialVersionUID = 8304306633400926502L;
 	private String fieldName;
 	private Class<?> fieldType;
+	private DataConverter dataConverter;
 	private Method methodGet;
 	private Method methodSet;
 	public String getFieldName() {
@@ -35,5 +38,11 @@ public class FieldInfo implements Serializable{
 	}
 	public void setMethodSet(Method methodSet) {
 		this.methodSet = methodSet;
+	}
+	public DataConverter getDataConverter() {
+		return dataConverter;
+	}
+	public void setDataConverter(DataConverter dataConverter) {
+		this.dataConverter = dataConverter;
 	}
 }

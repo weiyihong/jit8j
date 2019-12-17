@@ -47,6 +47,8 @@ public class RowMapperFactory {
 					for (FieldColumnInfo fieldColumnInfo : fieldList) {
 						try {
 							Object object = dataReader.getObject(rs, fieldColumnInfo);
+							object = fieldColumnInfo.getDataformater().format(object, fieldColumnInfo, null);
+							object = fieldColumnInfo.getDataConverter().dataConvert(object, null);
 							fieldColumnInfo.getMethodSet().invoke(t, object);
 						} catch (Exception e) {
 							LOGGER.info("set property error, class: {}, fieldName: {}", clazz, fieldColumnInfo.getFieldName());

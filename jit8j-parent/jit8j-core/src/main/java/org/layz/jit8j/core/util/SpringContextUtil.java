@@ -28,6 +28,10 @@ public class SpringContextUtil {
 			LOGGER.debug("springContext is null");
 			return null;
 		}
+		if(null == name || name.length() < 1) {
+			LOGGER.debug("name is blank");
+			return null;
+		}
 		return springContext.getBean(name);
 	}
 }

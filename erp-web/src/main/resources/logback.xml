@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration scan="true"> 
+	
+	<property name="LOG_HOME" value="G:/applog/jit8j" />
+	
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender"> 
+		<encoder> 
+			<pattern>[%-5level]%d{yyyy-MM-dd HH:mm:ss}|%thread|%logger{50}.%M\(%line\) | %msg%n</pattern> 
+		</encoder> 
+	</appender>
+	
+	<root level="DEBUG">
+		<appender-ref ref="STDOUT" />
+	</root>
+</configuration>

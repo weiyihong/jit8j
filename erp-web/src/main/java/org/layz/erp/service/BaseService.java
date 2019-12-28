@@ -2,8 +2,8 @@ package org.layz.erp.service;
 
 import java.util.List;
 
-import org.layz.jit8j.core.pojo.Page;
-import org.layz.jit8j.core.pojo.Pageable;
+import org.layz.hx.core.pojo.Page;
+import org.layz.hx.core.pojo.Pageable;
 
 public interface BaseService<T> {
 	/**

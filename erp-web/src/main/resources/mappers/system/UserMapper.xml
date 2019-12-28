@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="org.layz.erp.repository.mapper.system.UserMapper">
-
-    <select id="findById" resultType="org.layz.erp.entity.system.User">
-	    select id,sysId,userCode,userName,userPwd,sex,deleted,createdBy,lastModifiedBy,createdDate,lastModifiedDate from sys_user where id = #{id}
-	</select>
-</mapper>

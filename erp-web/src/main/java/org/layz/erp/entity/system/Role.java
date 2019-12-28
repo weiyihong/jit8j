@@ -1,24 +1,24 @@
 package org.layz.erp.entity.system;
 
-import org.layz.jit8j.core.annotation.Jit8jColumn;
-import org.layz.jit8j.core.annotation.Jit8jTable;
-import org.layz.jit8j.spring.jdbc.entity.AutoLongBaseEntity;
-@Jit8jTable(value = "sys_role")
-public class Role extends AutoLongBaseEntity{
+import org.layz.hx.core.annotation.HxColumn;
+import org.layz.hx.core.annotation.HxTable;
+import org.layz.hx.spring.jdbc.entity.AutoLongBaseEntity;
 
+@HxTable(value = "sys_role")
+public class Role extends AutoLongBaseEntity {
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = -1908676822748416957L;
-	@Jit8jColumn(sort = 1)
+	@HxColumn(sort = 1)
 	private Long sysId;
-	@Jit8jColumn(sort = 2)
+	@HxColumn(sort = 2)
 	private String roleCode;
-	@Jit8jColumn(sort = 3)
+	@HxColumn(sort = 3)
 	private String roleName;
-	@Jit8jColumn(sort = 4)
+	@HxColumn(sort = 4)
 	private Integer roleType;
-	@Jit8jColumn(sort = 5)
+	@HxColumn(sort = 5)
 	private String remark;
 	public Long getSysId() {
 		return sysId;

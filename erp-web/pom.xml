@@ -5,27 +5,39 @@
 	<groupId>org.layz.erp</groupId>
 	<artifactId>erp-web</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>8</source>
+                    <target>8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    <packaging>war</packaging>
 
 	<properties>
-		<jit8j.version>0.0.1-SNAPSHOT</jit8j.version>
+		<hx.version>0.0.1-SNAPSHOT</hx.version>
 	</properties>
 
 	<dependencies>
 		<dependency>
-			<groupId>org.layz.jit8j</groupId>
-			<artifactId>jit8j-springmvc</artifactId>
-			<version>${jit8j.version}</version>
+			<groupId>org.layz.hx</groupId>
+			<artifactId>hx-springmvc</artifactId>
+			<version>${hx.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>org.layz.jit8j</groupId>
-			<artifactId>jit8j-springjdbc</artifactId>
-			<version>${jit8j.version}</version>
+			<groupId>org.layz.hx</groupId>
+			<artifactId>hx-springjdbc</artifactId>
+			<version>${hx.version}</version>
 		</dependency>
-		<!-- <dependency>
-			<groupId>org.layz.jit8j</groupId>
-			<artifactId>jit8j-mybatis</artifactId>
-			<version>${jit8j.version}</version>
-		</dependency> -->
+		<dependency>
+			<groupId>org.layz.hx</groupId>
+			<artifactId>hx-mybatis</artifactId>
+			<version>${hx.version}</version>
+		</dependency>
 	</dependencies>
 </project>

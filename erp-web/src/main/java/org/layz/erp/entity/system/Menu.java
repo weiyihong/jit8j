@@ -1,31 +1,32 @@
 package org.layz.erp.entity.system;
 
-import org.layz.jit8j.core.annotation.Jit8jColumn;
-import org.layz.jit8j.core.annotation.Jit8jTable;
-import org.layz.jit8j.spring.jdbc.entity.AutoLongBaseEntity;
-@Jit8jTable("sys_menu")
-public class Menu extends AutoLongBaseEntity{
+import org.layz.hx.core.annotation.HxColumn;
+import org.layz.hx.core.annotation.HxTable;
+import org.layz.hx.spring.jdbc.entity.AutoLongBaseEntity;
+
+@HxTable("sys_menu")
+public class Menu extends AutoLongBaseEntity {
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 8104190755819299633L;
-	@Jit8jColumn(value = "parentId",sort = 1)
+	@HxColumn(value = "parentId",sort = 1)
 	private Long parentId;
-	@Jit8jColumn(value = "menuCode",sort = 2)
+	@HxColumn(value = "menuCode",sort = 2)
 	private String code;
-	@Jit8jColumn(value = "menuName",sort = 3)
+	@HxColumn(value = "menuName",sort = 3)
 	private String name;
-	@Jit8jColumn(value = "menuType",sort = 4)
+	@HxColumn(value = "menuType",sort = 4)
 	private Integer type;
-	@Jit8jColumn(value = "menuSort",sort = 5)
+	@HxColumn(value = "menuSort",sort = 5)
 	private Integer sort;
-	@Jit8jColumn(value = "menuIcon",sort = 6)
+	@HxColumn(value = "menuIcon",sort = 6)
 	private String icon;
-	@Jit8jColumn(value = "remark",sort = 7)
+	@HxColumn(value = "remark",sort = 7)
 	private String remark;
-	@Jit8jColumn(value = "menuUrl",sort = 8)
+	@HxColumn(value = "menuUrl",sort = 8)
 	private String url;
-	@Jit8jColumn(value = "helpUrl",sort = 9)
+	@HxColumn(value = "helpUrl",sort = 9)
 	private String helpUrl;
 	public Long getParentId() {
 		return parentId;

@@ -1,31 +1,32 @@
 package org.layz.erp.entity.system;
 
-import org.layz.jit8j.core.annotation.Jit8jColumn;
-import org.layz.jit8j.core.annotation.Jit8jTable;
-import org.layz.jit8j.spring.jdbc.entity.AutoLongBaseEntity;
-@Jit8jTable(value = "sys_user")
-public class User extends AutoLongBaseEntity{
+import org.layz.hx.core.annotation.HxColumn;
+import org.layz.hx.core.annotation.HxTable;
+import org.layz.hx.spring.jdbc.entity.AutoLongBaseEntity;
+
+@HxTable(value = "sys_user")
+public class User extends AutoLongBaseEntity {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = -6438242621784693872L;
-	@Jit8jColumn(sort = 1)
-	private Long sysId;
-	@Jit8jColumn(sort = 2)
+	@HxColumn(sort = 1)
+	private Long defaultRoleId;
+	@HxColumn(sort = 2)
 	private String userCode;
-	@Jit8jColumn(sort = 3)
+	@HxColumn(sort = 3)
 	private String userName;
-	@Jit8jColumn(value = "userPwd",sort = 4)
+	@HxColumn(value = "userPwd",sort = 4)
 	private String passWord;
-	@Jit8jColumn(sort = 5)
+	@HxColumn(sort = 5)
 	private Integer sex;
-	
-	public Long getSysId() {
-		return sysId;
+
+	public Long getDefaultRoleId() {
+		return defaultRoleId;
 	}
-	public void setSysId(Long sysId) {
-		this.sysId = sysId;
+	public void setDefaultRoleId(Long defaultRoleId) {
+		this.defaultRoleId = defaultRoleId;
 	}
 	public String getUserCode() {
 		return userCode;

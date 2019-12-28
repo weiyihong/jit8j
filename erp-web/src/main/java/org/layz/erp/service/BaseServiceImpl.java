@@ -2,10 +2,10 @@ package org.layz.erp.service;
 
 import java.util.List;
 
-import org.layz.jit8j.core.exception.Jit8jRuntimeException;
-import org.layz.jit8j.core.pojo.Page;
-import org.layz.jit8j.core.pojo.Pageable;
-import org.layz.jit8j.spring.jdbc.repository.BaseDao;
+import org.layz.hx.core.exception.HxRuntimeException;
+import org.layz.hx.core.pojo.Page;
+import org.layz.hx.core.pojo.Pageable;
+import org.layz.hx.spring.jdbc.repository.BaseDao;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -22,7 +22,7 @@ public abstract class BaseServiceImpl<T> implements BaseService<T>{
 	public Integer persistEntity(T t) {
 		if(null == t) {
 			LOGGER.info("请传入参数");
-			throw new Jit8jRuntimeException("请传入参数");
+			throw new HxRuntimeException("请传入参数");
 		}
 		return getDao().persistEntity(t);
 	}
@@ -36,7 +36,7 @@ public abstract class BaseServiceImpl<T> implements BaseService<T>{
 	public Integer update(T t) {
 		if(null == t) {
 			LOGGER.info("请传入参数");
-			throw new Jit8jRuntimeException("请传入参数");
+			throw new HxRuntimeException("请传入参数");
 		}
 		return getDao().update(t);
 	}
@@ -45,7 +45,7 @@ public abstract class BaseServiceImpl<T> implements BaseService<T>{
 	public Integer updateNotnull(T t) {
 		if(null == t) {
 			LOGGER.info("请传入参数");
-			throw new Jit8jRuntimeException("请传入参数");
+			throw new HxRuntimeException("请传入参数");
 		}
 		return getDao().updateNotnull(t);
 	}

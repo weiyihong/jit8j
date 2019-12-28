@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:p="http://www.springframework.org/schema/p"
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:mvc="http://www.springframework.org/schema/mvc"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
@@ -13,19 +14,19 @@
 	<mvc:interceptors>
 		<mvc:interceptor>
 			<mvc:mapping path="/**"/>
-			<ref bean="jit8jExceptionHandlerInterceptor"/>
+			<ref bean="hxExceptionHandlerInterceptor"/>
 		</mvc:interceptor>
 	</mvc:interceptors>
 	
-	<bean id= "jit8jExceptionHandlerInterceptor" class="org.layz.jit8j.spring.mvc.interceptor.Jit8jExceptionHandlerInterceptor">
+	<bean id= "hxExceptionHandlerInterceptor" class="org.layz.hx.spring.mvc.interceptor.HxExceptionHandlerInterceptor">
 		<property name="defaultExceptionHandler" ref="defaultExceptionHandler"/>
 		<property name="exceptionHandlerList">
 			<list>
-				<ref bean="jit8jExceptionHandler"/>
+				<ref bean="hxExceptionHandler"/>
 			</list>
 		</property>
 	</bean>
 	
-	<bean id="defaultExceptionHandler" class="org.layz.jit8j.spring.mvc.handler.DefaultExceptionHandler"/>
-	<bean id="jit8jExceptionHandler" class="org.layz.jit8j.spring.mvc.handler.Jit8jExceptionHandler"/>
+	<bean id="defaultExceptionHandler" class="org.layz.hx.spring.mvc.handler.DefaultExceptionHandler"/>
+	<bean id="hxExceptionHandler" class="org.layz.hx.spring.mvc.handler.HxExceptionHandler"/>
 </beans>

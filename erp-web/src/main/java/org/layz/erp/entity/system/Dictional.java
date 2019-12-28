@@ -1,30 +1,31 @@
 package org.layz.erp.entity.system;
 
-import org.layz.jit8j.core.annotation.Jit8jColumn;
-import org.layz.jit8j.core.annotation.Jit8jTable;
-import org.layz.jit8j.spring.jdbc.entity.AutoLongBaseEntity;
-@Jit8jTable("sys_dic")
-public class Dictional extends AutoLongBaseEntity{
+import org.layz.hx.core.annotation.HxColumn;
+import org.layz.hx.core.annotation.HxTable;
+import org.layz.hx.spring.jdbc.entity.AutoLongBaseEntity;
+
+@HxTable("sys_dic")
+public class Dictional extends AutoLongBaseEntity {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 5091317816932300054L;
-	@Jit8jColumn(value = "sysId", sort = 1)
+	@HxColumn(value = "sysId", sort = 1)
 	private Long sysId;
-	@Jit8jColumn(value = "dicCode", sort = 2)
+	@HxColumn(value = "dicCode", sort = 2)
 	private String code;
-	@Jit8jColumn(value = "parentCode", sort = 3)
+	@HxColumn(value = "parentCode", sort = 3)
 	private String parentCode;
-	@Jit8jColumn(value = "dicKey", sort = 4)
+	@HxColumn(value = "dicKey", sort = 4)
 	private String key;
-	@Jit8jColumn(value = "dicValue", sort = 5)
+	@HxColumn(value = "dicValue", sort = 5)
 	private String value;
-	@Jit8jColumn(value = "dicSort", sort = 6)
+	@HxColumn(value = "dicSort", sort = 6)
 	private Integer sort;
-	@Jit8jColumn(value = "dicType", sort = 7)
+	@HxColumn(value = "dicType", sort = 7)
 	private Integer type;
-	@Jit8jColumn(value = "remark", sort = 8)
+	@HxColumn(value = "remark", sort = 8)
 	private String remark;
 	public Long getSysId() {
 		return sysId;

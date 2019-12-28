@@ -6,10 +6,10 @@ import org.layz.erp.service.BaseService;
 public interface UserService extends BaseService<User>{
 	/**
 	 * 登录
-	 * @param userName
+	 * @param userCode
 	 * @param passWord
 	 * @return
 	 */
-	User login(String userCode,String passWord);
+	void login(String userCode,String passWord);
 
 }
